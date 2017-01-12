@@ -1,37 +1,146 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
     public static void main(String args[]) {
-        int[] a = {3, 3};
-        System.out.println("reslt" + removeElement(a, 3));
+        int a=1534236469;
+        System.out.println(reverse(a));
+//        int a=3;
+//        int b=0;
+//        int c=0;
+//
+//        while(b<a-1){
+//            System.out.println(b++);
+//        }
+//        while(b!=-1){
+//            System.out.println(b--);
+//        }
     }
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        int carray=0;
-        ListNode l3 = new ListNode(0);
-        while(l1!=null||l2!=null){
-            if(l1!=null){
-                carray+=l1.val;
-                l1=l1.next;
-            }
-            if(l2!=null){
-                carray+=l2.val;
-                l2=l2.next;
-            }
-            l3.val+=carray%10;
-            l3.next=new ListNode(carray/10);
-            l3=l3.next;
+    public static int reverse(int x) {
+        int result=0;
+        while(x!=0){
+            result=result*10+x%10;
+            x=x/10;
 
-        }
+        }return  result;
 
-
-
-
-
-
-        return l1;
     }
 }
+//    public int[] intersection(int[] nums1, int[] nums2) {
+//        if(nums1.length==0){
+//            return nums1;
+//        }
+//        if(nums2.length==0){
+//            return nums2;
+//        }
+//        Arrays.sort(nums1);
+//        Arrays.sort(nums2);
+//
+//        int j=0,i=0,c=1;int[] nA=new int[nums1.length+nums2.length+1];
+//        nA[0]=-1;
+//        while(i<nums1.length&&j<nums2.length) {
+//
+//            if (nums1[i] < nums2[j]) {
+//                i++;
+//            }else if(nums1[i] > nums2[j]){
+//                j++;
+//            }else{
+//
+//                if (nA[c-1]<nums1[i]){
+//                    nA[c]=nums1[i];
+//                    c++;
+//                }i++;j++;
+//            }
+//
+//        }return Arrays.copyOfRange(nA, 1, c);
+//    }
+//}
+
+
+
+
+
+//    public static String longestPalindrome(String s) {
+//        char[] nArr = s.toCharArray();
+//       // int a[] = new a[128];
+//        int start = 0;
+//        int longest=0;
+//        String longestS = "";
+//        for (;start < nArr.length; start++) {
+//            System.out.println(0);
+//            for (int end=nArr.length-1;end > start; end--) {
+//                System.out.println(1);
+//                if (nArr[start] == nArr[end]) {
+//                    System.out.println(2);
+//                    if(isPalindrome(nArr, start,end)) {
+//                        System.out.println(3);
+//                        if (end-start>longest){
+//                            System.out.println("start="+start+"  end="+end);
+//                            longest=end-start;
+//                            longestS=longestS.copyValueOf(Arrays.copyOfRange(nArr, start, end+1));
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        if(longest==0){
+//            return ""+nArr[0];
+//        }else{
+//            return longestS;
+//        }
+//    }
+//
+//
+//
+//
+//    public static boolean isPalindrome(char[] a,int b, int c) {
+//        System.out.println("进入");
+//        if (c - b ==-1 || c - b == 0) {
+//            return true;
+//        }
+//        else if (a[b + 1] == a[c - 1]) {
+//            b++;c--;
+//            return isPalindrome(a,b,c);
+//
+//        }
+//        else {
+//            System.out.println("进入否");
+//            return false;
+//        }
+//    }
+//}
+////**********************leetcode removeElement*********************
+//    public static void main(String args[]) {
+//        int[] a = {3, 3};
+//        System.out.println("reslt" + removeElement(a, 3));
+//    }
+//    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+//        int carray=0;
+//        ListNode l3 = new ListNode(0);
+//        while(l1!=null||l2!=null){
+//            if(l1!=null){
+//                carray+=l1.val;
+//                l1=l1.next;
+//            }
+//            if(l2!=null){
+//                carray+=l2.val;
+//                l2=l2.next;
+//            }
+//            l3.val+=carray%10;
+//            l3.next=new ListNode(carray/10);
+//            l3=l3.next;
+//
+//        }
+//
+//
+//
+//
+//
+//
+//        return l1;
+//    }
+//}
 
 
 
