@@ -1,0 +1,36 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 public class Solution \{\
+    public ListNode mergeKLists(ListNode[] lists) \{\
+   \
+        return mergePartKList(lists,0,lists.length-1);\
+    \}\
+     public ListNode mergePartKList(ListNode[] lists,int start,int end) \{\
+         if(start == end) return lists[start];\
+         if(start < end)\{\
+             int mid = (start + end)/2;\
+             ListNode L1 = mergePartKList(lists,start,mid);\
+             ListNode L2 = mergePartKList(lists,mid+1,end);\
+             return merge(L1,L2);\
+        \}\
+        return null;\
+        \
+        \
+    \}\
+     public ListNode merge(ListNode left,ListNode right) \{\
+         if(left == null) return right;\
+         if(right == null) return left;\
+         if(left.val < right.val)\{\
+             left.next = merge(left.next,right);\
+             return left;\
+         \}else\{\
+             right.next = merge(right.next,left);\
+             return right;\
+         \}\
+        \
+    \}\
+\}}
